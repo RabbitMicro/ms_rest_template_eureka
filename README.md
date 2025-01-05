@@ -1,0 +1,1 @@
+# ms_rest_template_eureka
