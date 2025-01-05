@@ -2,6 +2,7 @@ package com.example.car.controllers;
 
 import com.example.car.models.CarResponse;
 import com.example.car.services.CarService;
+import com.example.car.entities.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,5 +25,10 @@ public class CarController {
     @GetMapping("/{id}")
     public CarResponse findById(@PathVariable Long id) throws Exception {
         return carService.findById(id);
+    }
+
+    @GetMapping("/client/{id}")
+    public List<Car> getCarsById(@PathVariable Long id) {
+        return carService.getCarsById(id);
     }
 }

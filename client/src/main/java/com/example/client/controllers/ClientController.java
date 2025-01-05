@@ -1,9 +1,11 @@
 package com.example.client.controllers;
 
 import com.example.client.entities.Client;
+import com.example.client.model.ClientResponse;
 import com.example.client.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -14,12 +16,12 @@ public class ClientController {
     private ClientService service;
 
     @GetMapping
-    public List<Client> findAll() {
+    public List<ClientResponse> findAll() {
         return service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Client findById(@PathVariable Long id) throws Exception {
+    public ClientResponse findById(@PathVariable Long id) throws Exception {
         return service.findById(id);
     }
 

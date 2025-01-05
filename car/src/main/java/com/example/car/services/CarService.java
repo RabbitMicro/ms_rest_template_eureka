@@ -55,4 +55,9 @@ public class CarService {
                 .model(car.getModel())
                 .build();
     }
+
+    public List<Car> getCarsById(Long id) {
+        List<Car> cars = carRepository.findByClientId(id);
+        return cars;
+    }
 }
